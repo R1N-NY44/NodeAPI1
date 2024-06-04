@@ -2,9 +2,12 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-// main route / endpoint
-app.get('/', (req, res) => {
-    res.send('Hello Worlds!')
+// use the express-static middleware
+app.use(express.static("public"))
+
+// define the first route
+app.get("/", function (req, res) {
+    res.send("<h1>Hello World!</h1>")
 })
 
 // post
